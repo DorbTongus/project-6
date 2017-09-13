@@ -3,7 +3,7 @@ html{
 	font-size:62.5%;
 }
 body{
-	background-image:url(../../public/assets/congruent_outline.png);
+	background-image:linear-gradient(rgba(0,0,0, 0.3), rgba(0,0,0,0.3)),url(../../public/assets/congruent_outline.png);
 	background-repeat:repeat;
 	background-position:fixed;
 	max-width:1200px;
