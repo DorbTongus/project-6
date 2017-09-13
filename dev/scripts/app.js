@@ -4,10 +4,10 @@ import Header from './Header.js';
 import firebase from './firebase.js';
 
 
-{/*creates data fileds in firebase for games and scores*/}
+/*creates data fileds in firebase for games and scores*/
 const dbRefGames = firebase.database().ref('/games')
 
-/*form for game inputs, constantly visible at top of page*/
+/*form for game inputs, constantly rendered at top of page*/
 class GameForm extends React.Component {
 	render () {
 		return(
@@ -29,32 +29,28 @@ class GameForm extends React.Component {
 	}
 }
 
+// component for game images that allows them to be expanded and collpased on click and renders them at bottom of page
 class GameImage extends React.Component {
 	constructor() {
 		super();
-
 		this.state = {
 			isExpanded: false,
 		}
-
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(event) {
 		event.preventDefault();
-
 		this.setState({ isExpanded: !this.state.isExpanded });
 	}
-
 	render() {
 		return (
 			<img className = {`${this.state.isExpanded ? 'expandImage' : ''} proofImage`} id="proofImage" onClick = {this.handleClick} src={this.props.src} alt=""/>
-
 		 );
 	}
 }
 
-// form for score inputs
+// component for score input form
 class ScoreForm extends React.Component {
 	constructor() {
 		super();
@@ -68,10 +64,6 @@ class ScoreForm extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.addScore = this.addScore.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
-		//In this compontent set up the submit event for for the form
-		//And when you submit a score, you take the game id (this.props.game.id) and push a new score into
-		//that location in firebase
-
 	}
 	handleChange(event) {
 		console.log('handleChange');
@@ -120,15 +112,10 @@ class ScoreForm extends React.Component {
 				hasImage:false,
 				score:'',
 			})
-			// gameRef.push(thisImage);
-			// console.log(newScore);
-			// dbRefScores needs to reference the specific game rather than a unique object scores
-			// dbRefGames.push(newGame.id);	
 		}
 
 	}
 	render () {
-	// console.log('this.props', this.props);
 		return(
 			<section className='add-score'>
 			    <form onSubmit={this.addScore}>
@@ -155,6 +142,7 @@ class ScoreForm extends React.Component {
 	}
 }
 
+// component for app
 class App extends React.Component {
 	constructor() {
 		super();
@@ -163,7 +151,6 @@ class App extends React.Component {
 			games: [],
 			expandImage: false,
 		};
-	{/*need new array for scores? new constructor? where does it go?*/}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmitOne = this.handleSubmitOne.bind(this);
 		this.handleItemClick = this.handleItemClick.bind(this);
@@ -206,7 +193,6 @@ class App extends React.Component {
 		});
 	}
 	render() {
-		// console.log("this",this);
 	    return (
 	      <div className='app'>
 	      	<Header />
@@ -218,17 +204,17 @@ class App extends React.Component {
 	       		handleChange = {this.handleChange}
 	       		handleSubmitOne = {this.handleSubmitOne}
 	       		gameName = {this.state.gameName}
-	       		/> {/*the handleChange and handleSubmit props are making the handleChange and handleSubmit methods available inside the form Component*/}
+	       		/>
 	          <section className='display-game'>
 	            <div className='wrapper'>
 	              <ul>
+	              	{/* create and map through scoresArray and render*/}
 	              	{this.state.games.map((game, i) => {
 	              		const scores = game.scores;
 	              		const scoresArray = [];
 	              		const proofArray = [];
 	              		for(let score in scores){
 	              			scoresArray.push(scores[score]);
-	              			// proofArray.push(scores[score].proofImage);
 	              		};
 	              		console.log(scoresArray);
 	              		return (
@@ -240,8 +226,7 @@ class App extends React.Component {
 	              				return(
 	              						<div className = "scoreDisplay">
 	              							<p className = "scores">{scoreObj.scoreUpload}:</p>
-	              								{/*<img className = {`${this.state.expandImage ? 'expandImage' : ''} proofImage`} id="proofImage" onClick = {() => this.handleItemClick(event)} src={scoreObj.proofImage} alt=""/>*/}
-	              								<GameImage src={scoreObj.proofImage}/>
+	              							<GameImage src={scoreObj.proofImage}/>
 	              						</div>
 
 	              				);
