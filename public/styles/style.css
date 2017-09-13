@@ -149,7 +149,7 @@ form {
 
 .proofImage {
   border: 1px solid #00e100;
-  height: 150px;
+  height: auto;
   width: 150px;
   transition: all 0.5s; }
 
