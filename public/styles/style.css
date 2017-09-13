@@ -1,0 +1,239 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  background-image: url(../../public/assets/congruent_outline.png);
+  background-repeat: repeat;
+  background-position: fixed;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+h1 {
+  font-size: 2.5rem; }
+
+h2 {
+  font-size: 1.8rem; }
+
+button {
+  border: 1px solid #00e100;
+  background: #222;
+  color: #00e100;
+  font-family: 'orbitron';
+  font-size: 1.3rem;
+  padding: 5px; }
+
+button:hover {
+  animation-name: glow;
+  animation-name: flash;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  cursor: pointer; }
+
+input {
+  border: 1px solid #00e100;
+  background: #222;
+  color: #00e100;
+  font-family: 'orbitron';
+  font-size: 1.3rem;
+  padding: 5px; }
+
+header {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  border: 1px solid #00e100;
+  background-image: url(../../public/assets/screen.gif);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  header h1 {
+    text-align: center;
+    font-family: 'press start 2p';
+    color: #5afc4f;
+    text-shadow: 0px 0px 15px #00be00;
+    animation-name: glow;
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite; }
+
+.instructions {
+  color: #00e100;
+  font-size: 1.3rem;
+  font-family: 'press start 2p';
+  text-align: center;
+  line-height: 1.7;
+  border: 1px solid #00e100;
+  border-bottom: none;
+  border-top: none;
+  padding: 30px 0;
+  margin: 0 auto;
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top; }
+  .instructions p {
+    width: 80%;
+    margin: 0 auto;
+    animation-name: flash;
+    animation-duration: 8s;
+    animation-iteration-count: infinite; }
+
+.add-game {
+  border: 2px solid #00e100;
+  border-bottom: none;
+  margin-top: 0px;
+  background: black; }
+
+.inputFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1; }
+
+.display-game {
+  background: black;
+  margin: 0 auto;
+  border-top: none;
+  border: 2px solid #00e100;
+  margin-bottom: 20px; }
+
+.add-game {
+  text-align: center; }
+
+ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; }
+
+li {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid #00e100;
+  text-align: left;
+  background: #222; }
+  li h2, li p {
+    font-family: 'press start 2p';
+    padding: 10px;
+    color: #00e100;
+    animation-name: glow;
+    animation-name: flash;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    text-align: center; }
+  li form {
+    text-align: center; }
+
+li:hover {
+  background-image: url(../../public/assets/tracking4.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; }
+
+li:hover h2 {
+  animation-duration: 0.2s;
+  transform: scale(1.1); }
+
+li:hover p {
+  animation-duration: 0.2s; }
+
+li:hover img {
+  cursor: pointer; }
+
+form {
+  padding: 10px; }
+
+.proofImage {
+  border: 1px solid #00e100;
+  height: 150px;
+  width: 150px;
+  transition: all 0.5s; }
+
+.expandImage {
+  height: inherit;
+  width: inherit; }
+
+.scoreDisplay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px auto; }
+  .scoreDisplay img {
+    margin: 0; }
+
+li form {
+  width: 80%;
+  margin: 0 auto; }
+
+li form input {
+  border: 1px solid #00e100;
+  width: 80%;
+  background: #222;
+  color: #00e100;
+  font-family: 'orbitron';
+  padding: 5px;
+  margin-bottom: 10px; }
+
+li form input:first-child:hover {
+  cursor: pointer; }
+
+@keyframes glow {
+  0% {
+    text-shadow: 5px 10px 30px lime; }
+  10% {
+    text-shadow: -2px -1px 20px #008200; }
+  20% {
+    text-shadow: 2px 3px 15px #00be00; }
+  30% {
+    text-shadow: -1px -2px 25px #00c800; }
+  40% {
+    text-shadow: 3px 2px 22px lime; }
+  50% {
+    text-shadow: -2px -1px 35px lime; }
+  60% {
+    text-shadow: 1px 2px 12px #00c800; }
+  70% {
+    text-shadow: 3px 2px 16px #00be00; }
+  80% {
+    text-shadow: 0px -1px 25px #008200; } }
+
+@keyframes flash {
+  0% {
+    color: lime; }
+  10% {
+    color: #008200; }
+  20% {
+    color: #00be00; }
+  30% {
+    color: #00c800; }
+  40% {
+    color: lime; }
+  50% {
+    color: lime; }
+  60% {
+    color: #00c800; }
+  70% {
+    color: #00be00; }
+  80% {
+    color: #008200; } }
+
+@media (max-width: 1200px) {
+  body {
+    background-image: none; }
+  header {
+    margin-top: 0px; }
+  .display-game {
+    margin-bottom: 0px; } }
+
+@media (max-width: 720px) {
+  ul {
+    flex-wrap: nowrap;
+    flex-direction: column; }
+  li {
+    width: 80%; } }
